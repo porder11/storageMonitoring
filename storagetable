@@ -8,5 +8,7 @@ CREATE TABLE `storagetable` (
   `operationalStatus` varchar(45) DEFAULT NULL,
   `lastUpdate` datetime DEFAULT CURRENT_TIMESTAMP,
   `serverId` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `serverId_idx` (`serverId`),
+  CONSTRAINT `serverId` FOREIGN KEY (`serverId`) REFERENCES `servertable` (`serverId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
