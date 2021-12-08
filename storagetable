@@ -1,0 +1,12 @@
+CREATE TABLE `storagetable` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `diskName` varchar(45) DEFAULT NULL,
+  `usedStorage` float DEFAULT NULL,
+  `totalStorage` float DEFAULT NULL,
+  `freeStorage` float DEFAULT NULL,
+  `healthStatus` varchar(45) DEFAULT NULL,
+  `operationalStatus` varchar(45) DEFAULT NULL,
+  `lastUpdate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `serverId` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
