@@ -15,5 +15,5 @@ There are variables that contains the senders password and email, as well as the
 
 While using the script at home I need to add -Port 587 in the "Send-MailMessage" command, however when running it at Bazefield this was not necessary. 
 
-# parseEmail.py
+## parseEmail.py
 This program extracts the data from the email sent using powershell. It extracts the server and customer name from the title, and the storage information from the csv. 
