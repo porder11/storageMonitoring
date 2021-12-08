@@ -24,4 +24,8 @@ The program creates a directory for the attachments to be downloaded into, if it
 
 It automatically reads every unread email in the inbox. This could cause a problem if there are emails that haven't been read but has nothing to do with the storage information. A possible solution might be to create a new inbox where the storage information emails are automatically sent/redirected to.
 
-It replaces spaces with _ in the title and then creates a folder within the "downloadedAttachments" folder created earlier containing the CSV from the email. Then the CSV is opened and cleaned for spaces, special charecters etc and saved to a new CSV. Then it opens the new CSV and extracts and inserts the storage data into the database. It extracts the server and customer name from the title of the email using regex. If the server or customer name already exists it will not insert again. HOWEVER the storage data has no check for duplicates. 
+It replaces spaces with _ in the title and then creates a folder within the "downloadedAttachments" folder created earlier containing the CSV from the email. Then the CSV is opened and cleaned for spaces, special charecters etc and saved to a new CSV. Then it opens the new CSV and extracts and inserts the storage data into the database. It extracts the server and customer name from the title of the email using regex. 
+
+If the server or customer name already exists it will not insert again. HOWEVER the storage data has no check for duplicates. 
+
+The program prints some of the information to the screen so the user can know if the data was added successfully, in addition it creates a log file. These are can be removed without effecting anything else. 
