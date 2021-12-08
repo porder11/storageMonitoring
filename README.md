@@ -1,7 +1,7 @@
 # Scripts for monitoring storage
 Directories MIGHT need to be changed.
 
-# Mailing.ps1
+## Mailing.ps1
 This script extracts storage information from the disks on the computer/server it's running on.
 
 By default it extracts data from every disk that has a name. 
