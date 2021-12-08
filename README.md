@@ -28,4 +28,4 @@ It replaces spaces with _ in the title and then creates a folder within the "dow
 
 If the server or customer name already exists it will not insert again. HOWEVER the storage data has no check for duplicates. 
 
-The program prints some of the information to the screen so the user can know if the data was added successfully, in addition it creates a log file. These are can be removed without effecting anything else. 
+The program prints some of the information to the screen so the user can know if the data was added successfully, in addition it creates a log file. These can be removed without effecting anything else. 
