@@ -1,0 +1,9 @@
+CREATE TABLE `servertable` (
+  `serverId` int NOT NULL AUTO_INCREMENT,
+  `serverName` varchar(45) DEFAULT NULL,
+  `customerId` int DEFAULT NULL,
+  PRIMARY KEY (`serverId`),
+  UNIQUE KEY `serverName_UNIQUE` (`serverName`),
+  KEY `customerId_idx` (`customerId`),
+  CONSTRAINT `customerId` FOREIGN KEY (`customerId`) REFERENCES `customertable` (`customerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
