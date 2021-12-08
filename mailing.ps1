@@ -12,7 +12,7 @@ $info = Get-Volume | Where { $excludeDisks -notcontains $_.driveletter} |where D
 
 
 # Creates a CSV containing the storage information.
-$csvInfo = $info  | ConvertTo-Csv -Delimiter ";" -NoTypeInformation | Out-File -FilePath "C:\Users\akselple\Downloads\storageMonitoring\storageInfo.csv"
+$csvInfo = $info  | ConvertTo-Csv -Delimiter ";" -NoTypeInformation | Out-File -FilePath ".\storageInfo.csv"#"C:\Users\akselple\Downloads\storageMonitoring\storageInfo.csv"
 
 
 # Email
@@ -27,4 +27,4 @@ $content = "Customer name: $customerName", "Server name: $serverName", "Excluded
 
 # Sends an email containing the content aswell as a CSV file.
 # Try removing -Port 587 if you are getting an error. I have to use this when I'm on my home WiFi, but not at Bazefield.
-Send-MailMessage -To $recepient -From $from -Subject $theme -Body $content -Attachments "C:\Users\akselple\Downloads\storageMonitoring\storageInfo.csv" -SmtpServer $smtp -Credential $creds -UseSsl -Port 587 -DeliveryNotificationOption OnFailure
+Send-MailMessage -To $recepient -From $from -Subject $theme -Body $content -Attachments ".\storageInfo.csv" -SmtpServer $smtp -Credential $creds -UseSsl -Port 587 -DeliveryNotificationOption OnFailure

@@ -43,6 +43,11 @@ imap.select("inbox")
 n=0
 (retcode, messages) = imap.search(None, '(UNSEEN)')
 
+# Creates a directory for the attachments if there is none
+if not os.path.exists("downloadedAttachments"):
+    os.makedirs("downloadedAttachments")
+    logging.info("Created directory downloadedAttachments")
+
 # Reads all unread emails
 if retcode == 'OK':
     
@@ -79,7 +84,7 @@ if retcode == 'OK':
                     logging.info(f"Downloaded attachment {fileName}")
                     if fileName:
                         # Directory to save the attachments to
-                        folderName = f"C:/Users/akselple/Downloads/storageMonitoring/downloadedAttachments/{clean(subject)}"
+                        folderName = f"downloadedAttachments/{clean(subject)}"
                         if not os.path.isdir(folderName):
                             # makes a folder for this email (named after the subject)
                             os.mkdir(folderName)
@@ -90,7 +95,7 @@ if retcode == 'OK':
 
         try: 
             # Directory of where the CSV is located
-            df = pd.read_csv(f"C:/Users/akselple/Downloads/storageMonitoring/downloadedAttachments/{clean(subject)}/storageInfo.csv",
+            df = pd.read_csv(f"downloadedAttachments/{clean(subject)}/storageInfo.csv",
             na_values = ["not available", "n.a."], sep =";", encoding="UTF-16 LE")
             print(f"Server: {serverName}" )
             print(f"Customer: {customerName}")
@@ -103,7 +108,7 @@ if retcode == 'OK':
 
 
             # Open unformatted csv file
-            df = pd.read_csv(f"C:/Users/akselple/Downloads/storageMonitoring/downloadedAttachments/{clean(subject)}/storageInfo.csv",
+            df = pd.read_csv(f"downloadedAttachments/{clean(subject)}/storageInfo.csv",
                         na_values = ["not available", "n.a."], sep =";", encoding="UTF-16 LE")
 
 
@@ -147,7 +152,7 @@ db.close()
 
 # Delete files or directories older than 2 days
 twoDaysAgo = time.time() - (2 * 86400)
-root = r"C:\Users\akselple\Downloads\storageMonitoring\downloadedAttachments"
+root = "downloadedAttachments"
 
 
 for i in os.listdir(root):
