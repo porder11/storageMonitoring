@@ -95,8 +95,8 @@ if retcode == 'OK':
 
         try: 
             # Directory of where the CSV is located
-            df = pd.read_csv(f"downloadedAttachments/{clean(subject)}/storageInfo.csv",
-            na_values = ["not available", "n.a."], sep =";", encoding="UTF-16 LE") # Unnecessary 
+            #df = pd.read_csv(f"downloadedAttachments/{clean(subject)}/storageInfo.csv",
+            #na_values = ["not available", "n.a."], sep =";", encoding="UTF-16 LE") # Unnecessary 
             print(f"Server: {serverName}" )
             print(f"Customer: {customerName}")
 
