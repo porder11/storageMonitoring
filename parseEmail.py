@@ -27,8 +27,8 @@ def clean(text):
 
 
 # account credentials
-username = "akstestm@gmail.com"
-password = "TestMail1234"
+username = "mail@gmail.com"
+password = "****"
 
 # create an IMAP4 class with SSL 
 imap = imaplib.IMAP4_SSL("imap.gmail.com")
