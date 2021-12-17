@@ -16,10 +16,10 @@ $csvInfo = $info  | ConvertTo-Csv -Delimiter ";" -NoTypeInformation | Out-File -
 
 
 # Email
-$from = "akstestm@gmail.com"
-$passwd = ConvertTo-SecureString "TestMail1234" -AsPlainText -Force
+$from = "mail@gmail.com"
+$passwd = ConvertTo-SecureString "****" -AsPlainText -Force
 $smtp = "smtp.gmail.com"
-$recepient = "akstestm@gmail.com"
+$recepient = "mail@gmail.com"
 $theme = "storageInfo $serverName server $customerName customer $date"
 $creds = New-Object System.Management.Automation.PSCredential ($from, $passwd)
 
